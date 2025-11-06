@@ -1,11 +1,15 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
 import { TooltipProvider } from '@/components/ui/tooltip'
 
-const inter = Inter({ subsets: ['latin'] })
+// Temporarily disabled due to network restrictions
+// const inter = Inter({
+//   subsets: ['latin'],
+//   fallback: ['system-ui', 'arial']
+// })
 
 export const metadata: Metadata = {
   title: 'Minicontratos - AI Chat Platform',
@@ -32,7 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className="font-sans">
         <ThemeProvider>
           <TooltipProvider>
             {children}

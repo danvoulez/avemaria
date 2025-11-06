@@ -35,7 +35,7 @@ export function CircleSelector() {
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold mb-2">Select a Workspace</h2>
           <p className="text-sm text-muted-foreground">
-            Choose which workspace you'd like to use
+            Choose which workspace you&apos;d like to use
           </p>
         </div>
 

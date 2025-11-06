@@ -39,10 +39,10 @@ export function Sidebar({ onClose }: SidebarProps) {
   const currentCircle = useAuthStore(state => state.getCurrentCircle())
   const createConversation = useConversationStore(state => state.createConversation)
 
-  const handleNewChat = () => {
+  const handleNewChat = React.useCallback(() => {
     createConversation()
     onClose?.()
-  }
+  }, [createConversation, onClose])
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
@@ -66,7 +66,7 @@ export function Sidebar({ onClose }: SidebarProps) {
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [])
+  }, [handleNewChat])
 
   return (
     <>
